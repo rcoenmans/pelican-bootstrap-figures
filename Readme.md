@@ -1,4 +1,4 @@
-# Pelican Bootstrap Figures Plugin
+# Bootstap figures plugin for Pelican
 
 A Pelican plugin that creates a Bootstrap figure element with figure caption out of images.
 
