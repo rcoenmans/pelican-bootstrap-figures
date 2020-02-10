@@ -3,3 +3,7 @@ output
 
 .vscode
 .ini
+
+build
+dist
+*.egg-info
