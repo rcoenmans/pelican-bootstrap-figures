@@ -24,10 +24,15 @@
 from bs4 import BeautifulSoup
 from pelican import signals, contents
 
-def run_plugin(data_passed_from_pelican):
-    data_passed_from_pelican._content = bootstrap_figures(data_passed_from_pelican._content)
 
-def bootstrap_figures(content):    
+def run_plugin(content):
+    if isinstance(content, contents.Static):
+        return
+
+    content._content = bootstrap_figures(content._content)
+
+
+def bootstrap_figures(content):
     soup = BeautifulSoup(content, 'html.parser')
     for img in soup.find_all('img'):
         # Figure
