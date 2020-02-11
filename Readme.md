@@ -4,11 +4,11 @@ A Pelican plugin that creates a Bootstrap figure element with figure caption out
 
 ## Installation
 ```
-pip install bootstrap-figures
+pip install pelican-bootstrap-figures
 ```
 
 ## Configuration
 Enable the plugin in your `pelicanconf.py`.
 ```
-PLUGINS = [ 'bootstrap_figures' ]
+PLUGINS = [ 'pelican_bootstrap_figures' ]
 ```
