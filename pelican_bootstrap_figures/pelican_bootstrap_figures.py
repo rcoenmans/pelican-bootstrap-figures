@@ -24,21 +24,17 @@
 from bs4 import BeautifulSoup
 from pelican import signals, contents
 
-
 def run_plugin(content):
     if isinstance(content, contents.Static):
         return
 
     content._content = bootstrap_figures(content._content)
 
-
 def bootstrap_figures(content):
     soup = BeautifulSoup(content, 'html.parser')
     for img in soup.find_all('img'):
-        # Figure
         fig = soup.new_tag('figure', attrs={'class': 'figure'})
 
-        # Figure caption
         figcap = soup.new_tag('figcaption', attrs={'class': 'figure-caption text-right'} )
         figcap.string = img['alt']
 
@@ -47,7 +43,6 @@ def bootstrap_figures(content):
         img.insert_after(figcap)
 
     return soup.decode()
-
 
 def register():
     signals.content_object_init.connect(run_plugin)
