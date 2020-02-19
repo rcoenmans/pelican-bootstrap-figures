@@ -26,20 +26,37 @@ import pelican_bootstrap_figures.pelican_bootstrap_figures
 
 class BootstrapFiguresTest(unittest.TestCase):
     def test_wrap_figure_around_img(self):
+        # Arrange
         html = '<img alt="Example" src="example.jpg" />'
+        
+        # Act
         html = pelican_bootstrap_figures.bootstrap_figures(html)
 
+        # Assert
         self.assertIsNotNone(html)
         self.assertEqual(html, '<figure class="figure"><img alt="Example" class="figure-img img-fluid" src="example.jpg"/><figcaption class="figure-caption text-right">Example</figcaption></figure>')
 
-
     def test_wrap_figure_around_multiple_imgs(self):
+        # Arrange
         html = '<p><img alt="Example" src="example.jpg" /></p><p><img alt="Example" src="example.jpg" /></p>'
+        
+        # Act
         html = pelican_bootstrap_figures.bootstrap_figures(html)
 
+        # Assert
         self.assertIsNotNone(html)
         self.assertEqual(html, '<p><figure class="figure"><img alt="Example" class="figure-img img-fluid" src="example.jpg"/><figcaption class="figure-caption text-right">Example</figcaption></figure></p><p><figure class="figure"><img alt="Example" class="figure-img img-fluid" src="example.jpg"/><figcaption class="figure-caption text-right">Example</figcaption></figure></p>')
 
+    def test_wrap_figure_around_no_imgs(self):
+        # Arrange
+        html = '<p></p>'
+        
+        # Act
+        html = pelican_bootstrap_figures.bootstrap_figures(html)
+
+        # Assert
+        self.assertIsNotNone(html)
+        self.assertEqual(html, '<p></p>')
 
 if __name__ == '__main__':
     unittest.main()
