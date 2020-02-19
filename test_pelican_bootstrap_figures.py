@@ -30,7 +30,7 @@ class BootstrapFiguresTest(unittest.TestCase):
         html = pelican_bootstrap_figures.bootstrap_figures(html)
 
         self.assertIsNotNone(html)
-        self.assertEqual(html, '<figure class="figure"><img alt="Example" class="img-fluid" src="example.jpg"/><figcaption class="figure-caption text-right">Example</figcaption></figure>')
+        self.assertEqual(html, '<figure class="figure"><img alt="Example" class="figure-img img-fluid" src="example.jpg"/><figcaption class="figure-caption text-right">Example</figcaption></figure>')
 
 
     def test_wrap_figure_around_multiple_imgs(self):
@@ -38,7 +38,7 @@ class BootstrapFiguresTest(unittest.TestCase):
         html = pelican_bootstrap_figures.bootstrap_figures(html)
 
         self.assertIsNotNone(html)
-        self.assertEqual(html, '<p><figure class="figure"><img alt="Example" class="img-fluid" src="example.jpg"/><figcaption class="figure-caption text-right">Example</figcaption></figure></p><p><figure class="figure"><img alt="Example" class="img-fluid" src="example.jpg"/><figcaption class="figure-caption text-right">Example</figcaption></figure></p>')
+        self.assertEqual(html, '<p><figure class="figure"><img alt="Example" class="figure-img img-fluid" src="example.jpg"/><figcaption class="figure-caption text-right">Example</figcaption></figure></p><p><figure class="figure"><img alt="Example" class="figure-img img-fluid" src="example.jpg"/><figcaption class="figure-caption text-right">Example</figcaption></figure></p>')
 
 
 if __name__ == '__main__':

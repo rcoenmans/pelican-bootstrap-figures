@@ -29,7 +29,7 @@ from setuptools import setup, find_packages
 if __name__ == "__main__":
     setup(
         name='pelican-bootstrap-figures',
-        version='1.0.0',
+        version='1.0.1',
         description='Bootstrap figures for Pelican',
         long_description='Bootstrap figures for Pelican static site generator.',
         license='MIT License',

@@ -38,7 +38,7 @@ def bootstrap_figures(content):
         figcap = soup.new_tag('figcaption', attrs={'class': 'figure-caption text-right'} )
         figcap.string = img['alt']
 
-        img['class'] = 'img-fluid'
+        img['class'] = 'figure-img img-fluid'
         img.wrap(fig)
         img.insert_after(figcap)
 
